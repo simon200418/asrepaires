@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - AS Repaires</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .service-card {
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #0d6efd;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list i {
+            color: #0d6efd;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .f-info-links a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        .fa-address-book {
+            color: black;
+        }
+
+        .f-info-links a:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+
+        .f-info-links,
+        .f-info-social {
+            width: 100%;
+        }
+
+        .f-info-social i {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        .f-info {
+            text-align: center;
+            height: 8rem;
+            background-color: #ebebeb;
+            font-size: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-items: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="homeF.ejs">
+                <img src="/images/logo.png" alt="Logo" class="me-2"
+                    style="width: 40px; height: 40px; border-radius: 50%;">
+                <span>AS Repaires</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/About">About Us</a>
+                    <a class="nav-link active" href="/Services">Services</a>
+                    <a class="nav-link" href="/Contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Header -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4">Our Services</h1>
+            <p class="lead">Professional Audio Device Repair Solutions</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Headphone Repair -->
+                <div class="col-lg-6">
+                    <div class="card service-card">
+                        <div class="card-body p-4">
+                            <span class="price-tag">Starting from ₹399</span>
+                            <div class="service-icon">
+                                <i class="bi bi-headphones"></i>
+                            </div>
+                            <h3 class="card-title mb-4">Headphone Repair</h3>
+                            <ul class="feature-list mb-4">
+                                <li><i class="bi bi-check-circle"></i>Driver replacement</li>
+                                <li><i class="bi bi-check-circle"></i>Cable repair/replacement</li>
+                                <li><i class="bi bi-check-circle"></i>Ear cushion replacement</li>
+                                <li><i class="bi bi-check-circle"></i>Audio jack repair</li>
+                                <li><i class="bi bi-check-circle"></i>Band adjustment/repair</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button onclick="openModal('modalHeadphone')" class="btn btn-primary">Book
+                                    Repair</button>
+                                <button class="btn btn-outline-primary">Learn More</button>
+                            </div><br>
+
+                            <div id="modalHeadphone" class="service-modal" style="display: none;">
+                                <button id="c-btn" class="btn btn-primary">
+                                    <a style="color: white;" href="tel:+91 72196 62469">Call Us</a>
+                                </button>
+                                <button id="e-btn" class="btn btn-primary">
+                                    <a style="color: white;"
+                                        href="mailto:aakashbehenwal@gmail.com?subject=Service Booking&body=Hello, I would like to book a service.">Email
+                                        Us</a>
+                                </button>
+                                <button class="btn btn-danger" onclick="closeModal('modalHeadphone')">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wired Earphone Repair -->
+                <div class="col-lg-6">
+                    <div class="card service-card">
+                        <div class="card-body p-4">
+                            <span class="price-tag">Starting from ₹299</span>
+                            <div class="service-icon">
+                                <i class="bi bi-earbuds"></i>
+                            </div>
+                            <h3 class="card-title mb-4">Wired Earphone Repair</h3>
+                            <ul class="feature-list mb-4">
+                                <li><i class="bi bi-check-circle"></i>Wire shorting fix</li>
+                                <li><i class="bi bi-check-circle"></i>Earbud speaker repair</li>
+                                <li><i class="bi bi-check-circle"></i>Jack replacement</li>
+                                <li><i class="bi bi-check-circle"></i>Mic repair</li>
+                                <li><i class="bi bi-check-circle"></i>Volume control fix</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button onclick="openModal('modalWiredEarphone')" class="btn btn-primary">Book
+                                    Repair</button>
+                                <button class="btn btn-outline-primary">Learn More</button>
+                            </div><br>
+
+                            <div id="modalWiredEarphone" id="serviceModal" style="display: none;">
+                                <button id="c-btn" class="btn btn-primary"> <a style="color: white;"
+                                        href="tel:+91 72196 62469">Call Us</a> </button>
+                                <button id="e-btn" class="btn btn-primary">
+                                    <a style="color: white;"
+                                        href="mailto:aakashbehenwal@gmail.com?subject=Service Booking&body=Hello, I would like to book a service.">Email
+                                        Us</a></button>
+                                <button class="btn btn-danger" onclick="closeModal('modalWiredEarphone')">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wireless Earphone Repair -->
+                <div class="col-lg-6">
+                    <div class="card service-card">
+                        <div class="card-body p-4">
+                            <span class="price-tag">Starting from ₹399</span>
+                            <div class="service-icon">
+                                <i class="bi bi-bluetooth"></i>
+                            </div>
+                            <h3 class="card-title mb-4">Wireless Earphone Repair</h3>
+                            <ul class="feature-list mb-4">
+                                <li><i class="bi bi-check-circle"></i>Battery replacement</li>
+                                <li><i class="bi bi-check-circle"></i>Bluetooth connectivity fix</li>
+                                <li><i class="bi bi-check-circle"></i>Charging case repair</li>
+                                <li><i class="bi bi-check-circle"></i>Body replacement</li>
+                                <li><i class="bi bi-check-circle"></i>Sound quality enhancement</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button onclick="openModal('modalAirbuds')" class="btn btn-primary">Book Repair</button>
+                                <button class="btn btn-outline-primary">Learn More</button>
+                            </div><br>
+                            <div id="modalAirbuds" id="serviceModal" style="display: none;">
+                                <button id="c-btn" class="btn btn-primary"> <a style="color: white;"
+                                        href="tel:+91 72196 62469">Call Us</a> </button>
+                                <button id="e-btn" class="btn btn-primary">
+                                    <a style="color: white;"
+                                        href="mailto:aakashbehenwal@gmail.com?subject=Service Booking&body=Hello, I would like to book a service.">Email
+                                        Us</a></button>
+                                <button class="btn btn-danger" onclick="closeModal('modalAirbuds')">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neckband Repair -->
+                <div class="col-lg-6">
+                    <div class="card service-card">
+                        <div class="card-body p-4">
+                            <span class="price-tag">Starting from ₹299</span>
+                            <div class="service-icon">
+                                <i class="bi bi-bluetooth"></i>
+                            </div>
+                            <h3 class="card-title mb-4">Neckband Repair</h3>
+                            <ul class="feature-list mb-4">
+                                <li><i class="bi bi-check-circle"></i>Battery replacement</li>
+                                <li><i class="bi bi-check-circle"></i>Neckband flex repair</li>
+                                <li><i class="bi bi-check-circle"></i>Button replacement</li>
+                                <li><i class="bi bi-check-circle"></i>Speaker repair</li>
+                                <li><i class="bi bi-check-circle"></i>Vibration motor fix</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button onclick="openModal('modelneckband')" class="btn btn-primary">Book
+                                    Repair</button>
+                                <button class="btn btn-outline-primary">Learn More</button>
+                            </div><br>
+                            <div id="modelneckband" id="serviceModal" style="display: none;">
+                                <button id="c-btn" class="btn btn-primary"> <a style="color: white;"
+                                        href="tel:+91 72196 62469">Call Us</a> </button>
+                                <button id="e-btn" class="btn btn-primary">
+                                    <a style="color: white;"
+                                        href="mailto:aakashbehenwal@gmail.com?subject=Service Booking&body=Hello, I would like to book a service.">Email
+                                        Us</a></button>
+                                <button class="btn btn-danger" onclick="closeModal('modelneckband')">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Repair Process</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-1-circle"></i>
+                        </div>
+                        <h4>Book Service</h4>
+                        <p>Schedule your repair online or call us</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-2-circle"></i>
+                        </div>
+                        <h4>Diagnosis</h4>
+                        <p>Expert assessment of the issue</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-3-circle"></i>
+                        </div>
+                        <h4>Repair</h4>
+                        <p>Professional repair by certified technicians</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-4-circle"></i>
+                        </div>
+                        <h4>Quality Check</h4>
+                        <p>Thorough testing before delivery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warranty Section -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Warranty</h2>
+            <p class="lead mb-4">All repairs come with a 90-day warranty</p>
+            <button class="btn btn-primary btn-lg">
+                View Warranty Terms
+            </button>
+        </div>
+    </section>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+    </script>
+
+    <footer>
+        <div class="f-info">
+            <div class="f-info-social">
+                <i class="fa-brands fa-square-facebook fa-bounce"></i>
+                <i class="fa-brands fa-square-instagram fa-bounce"></i>
+                <i class="fa-brands fa-square-whatsapp fa-bounce"></i>
+                <i class="fa-brands fa-linkedin fa-bounce"></i>
+                <a href="/Contact" target="_blank">
+                    <i class="fa-solid fa-address-book fa-bounce"></i>
+                </a>
+
+            </div>
+            <div> &copy; AS Repaires Private Limited</div>
+            <div class="f-info-links">
+                <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
